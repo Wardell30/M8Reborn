@@ -1,0 +1,73 @@
+Sistemas Web
+
+relatorio de desenvolvimento
+	aplicacao
+	dependencia
+	funcionalidades
+	limitacoes
+	especificacao de alto nivel
+	estimativa de carga de trabalho para cada fase de desenvolvimento
+	
+	Planeamento e definicao (antes de mais tem que ser um processo incremental, nao podemos fazer como fizemos o outro)
+		definicao das metas e objetivos para o trabalho
+		recolha e analise das informacoes necessarias para o desenvolvimento
+		extensao de conteudos, funcionalidades interativas, tecnologias requerentes
+
+	Especificacao e analise de requisitos (aqui vamos ter que ser mais espicificos e delinear melhor as funcionalidades que a aplicacao vai ter)
+		Indicacao de software e hardware necessario, por exemplo base de dados, servidor web, bootstrap
+		Colocar uma especie de requisitos funcionais e nao funcionais, nao e preciso a outra merda toda
+		Carga de trabalho (nao sei porque e que esta aqui mas ok...)
+	
+	Layout e prototipagem do site/ aplicacao
+		Mapa de navegacao do site
+		Mockups
+
+	Montagem e integracao
+		Funcionalidades proporcionadas aos utilizadores
+		Dependencias caso existam (terceiros) 
+		limitacoes das funcionalidades (nao vamos ter nenhuma crl)
+
+	Testes
+		processo que o utilizador tem que fazer ate chegar a um certo sitio
+
+	Analise e discussao
+		carga de trabalho efetivo
+		enumerar dificuldades e solucoes implementadas
+		Justificar se o plano nao foi cumprido (claro que vamos cumprir)
+		apontar novas funcionalidades
+
+aplicacao
+	JSON nos pedidos AJAX
+	XML nos pedidos AJAX
+	Pedidos AJAX contornando com segurança o same-origin policy 
+	cookies
+	guardar estado localmente
+	web services para recolha de dados
+	Css framework
+	Javascript framework
+	API publica
+	API privada criacao
+	API privada com base de dados
+	Implementacao de offline mode
+	muitas funcionalidades para o utilizador final
+	cross browser
+	Valor comercial, utilidade
+
+
+
+entrega
+	3 dias antes antes da data de entrega
+	relatorio sem alteracoes 3 dias antes da entrega
+	Todos os ficheiros e diretorios
+		minusculas
+		sem espacos
+		acentos
+		pontuacao
+	ficheiros html e php separados dos outros
+	ver depois mais detalhes para o relatorio no enunciado
+	
+
+apresentacao
+	fazer a ponte entre requisitos e aplicacao
+	demonstrar todas as funcionalidades
+	nao deixar duvida nenhuma aos cabroezinhos que vao estar a fazer perguntas...

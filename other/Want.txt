@@ -1,0 +1,121 @@
+Tem que ter terms and privacy
+
+Animated menu icon
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_menu_icon_js
+
+accordion
+https://www.w3schools.com/howto/howto_js_accordion.asp
+
+Tabs
+https://www.w3schools.com/howto/howto_js_tabs.asp
+
+responsive menu
+https://www.w3schools.com/howto/howto_js_topnav.asp
+
+sidenav push example
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push
+
+icon bar
+https://www.w3schools.com/howto/howto_css_icon_bar.asp
+
+hoverable dropdown
+https://www.w3schools.com/howto/howto_css_dropdown.asp
+
+slideshow
+https://www.w3schools.com/howto/howto_js_slideshow.asp
+
+calendar
+https://www.w3schools.com/howto/howto_css_calendar.asp
+
+add arrow on hover
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1
+
+social media buttons (use social media api)
+https://www.w3schools.com/howto/howto_css_social_media_buttons.asp
+
+loading buttons
+https://www.w3schools.com/howto/howto_css_loading_buttons.asp
+
+modal box
+https://www.w3schools.com/howto/howto_css_modals.asp
+https://www.w3schools.com/howto/howto_css_modal_images.asp
+
+skill bar
+https://www.w3schools.com/howto/howto_css_skill_bar.asp
+
+tooltip
+https://www.w3schools.com/howto/howto_css_tooltip.asp
+
+todo list
+https://www.w3schools.com/howto/howto_js_todolist.asp
+
+image hover overlay
+https://www.w3schools.com/howto/howto_css_image_overlay.asp
+
+loader
+https://www.w3schools.com/howto/howto_css_loader.asp
+
+contact chips
+https://www.w3schools.com/howto/howto_css_contact_chips.asp
+https://www.w3schools.com/howto/howto_css_cards.asp
+
+animated search form
+https://www.w3schools.com/howto/howto_css_animated_search.asp
+
+alerts
+https://www.w3schools.com/howto/howto_js_alert.asp
+
+toast
+https://www.w3schools.com/howto/howto_js_snackbar.asp
+
+toogle switch
+https://www.w3schools.com/howto/howto_css_switch.asp
+
+responsive table
+https://www.w3schools.com/howto/howto_css_pricing_table.asp
+
+login form
+https://www.w3schools.com/howto/howto_css_login_form.asp
+
+parallax scrolling effect
+https://www.w3schools.com/howto/howto_css_parallax.asp
+
+countdown timer
+https://www.w3schools.com/howto/howto_js_countdown.asp
+
+coming soon page if needed
+https://www.w3schools.com/howto/howto_css_coming_soon.asp
+
+testimonials/comments
+https://www.w3schools.com/howto/howto_css_testimonials.asp
+
+google maps
+https://www.w3schools.com/graphics/google_maps_intro.asp
+
+icons
+https://www.w3schools.com/icons/default.asp
+
+ver bookmarks udemy
+
+BOOTSTRAP
+
+labels and badges
+https://www.w3schools.com/bootstrap/bootstrap_badges_labels.asp
+
+progress bar
+https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
+
+dropdowns
+https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp
+
+media objects
+https://www.w3schools.com/bootstrap/bootstrap_media_objects.asp
+
+
+
+https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp
+https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp
+
+
+
+

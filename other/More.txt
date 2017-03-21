@@ -1,0 +1,4 @@
+users can be admins, regular users, advanced users or guests
+multilanguage
+use upt login
+terms and privacy

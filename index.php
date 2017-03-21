@@ -1,0 +1,436 @@
+<?php
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>M8Reborn</title>
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">        
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendor/css/animate.min.css">
+		<link rel="stylesheet" href="css/form-elements.css">
+        <link rel="stylesheet" href="css/landing.css">
+        <link rel="stylesheet" href="vendor/css/media-queries.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+		<nav class="navbar navbar-inverse navbar-fixed-top navbar-no-bg" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.php">M8Reborn</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="scroll-link" href="#top-content">Top</a></li>
+						<li><a class="scroll-link" href="#features">Features</a></li>
+						<li><a class="scroll-link" href="#how-it-works">How it works</a></li>
+						<li><a class="scroll-link" href="#testimonials">Testimonials</a></li>
+						<li><a class="scroll-link" href="#about-us">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1 class="wow fadeInLeftBig"><strong>M8Reborn</strong></h1>
+                            <div class="description wow fadeInLeftBig">
+                            	<p>
+	                            	Welcome to <strong>M8Reborn</strong>! Get ready to have the time of your life, while having the best results in college!&nbsp;&nbsp;&nbsp;&nbsp;
+                                    The sky is the limit!
+                            	</p>
+                            </div>
+                            <div class="top-big-link wow fadeInUp">
+                            	<a class="btn btn-link-1" href="login.php">Log in</a>
+                            	<a class="btn btn-link-2 scroll-link" href="#features">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="features-container section-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 features section-description wow fadeIn">
+	                    <h2><strong>Best</strong> features</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                </div>
+	            </div>
+	            <div class="row">
+                	<div class="col-sm-4 features-box wow fadeInUp">
+	                	<div class="features-box-icon">
+	                		<i class="fa fa-pencil"></i>
+	                	</div>
+	                    <h3>Shared note taking</h3>
+	                    <p>Collect, nurture and share notes and ideas with M8Reborn. Your notes are always with you, always accesible and one click away!</p>
+                    </div>
+                    <div class="col-sm-4 features-box wow fadeInDown">
+	                	<div class="features-box-icon">
+	                		<i class="fa fa-graduation-cap"></i>
+	                	</div>
+	                    <h3>University Tracker</h3>
+	                    <p>M8Reborn allows you to visualize your goals, track your time and assign tasks for your projects!</p>
+                    </div>
+                    <div class="col-sm-4 features-box wow fadeInUp">
+	                	<div class="features-box-icon">
+	                		<i class="fa fa-usd"></i>
+	                	</div>
+	                    <h3>Budget Tracking</h3>
+	                    <p>Kepp track of your budget with M8Reborn. Spend your money wisely and start saving now!</p>
+                    </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-12 section-bottom-button wow fadeInUp">
+                        <a class="btn btn-link-1 scroll-link" href="#more-features">Learn more</a>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+
+        <div class="more-features-container section-container section-container-gray-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 more-features section-description wow fadeIn">
+	                    <h2><strong>More</strong> features</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-5 more-features-box wow fadeInLeft">
+	                    <img src="images/devices/iphone.png" alt="">
+	                </div>
+	                <div class="col-sm-7 more-features-box wow fadeInUp">
+	                	
+	                    <div class="more-features-box-text">
+	                    	<div class="more-features-box-text-icon">
+	                    		<i class="fa fa-eye"></i>
+	                    	</div>
+	                    	<h3>Easy to use</h3>
+	                    	<div class="more-features-box-text-description">
+	                    		Navigate through sections wiht just one click. Mobile ready. Experince the full power of the application in your smartphone!
+	                    	</div>
+	                    </div>
+	                    <div class="more-features-box-text">
+	                    	<div class="more-features-box-text-icon">
+	                    		<i class="fa fa-user"></i>
+	                    	</div>
+	                    	<h3>Hang out</h3>
+	                    	<div class="more-features-box-text-description">
+	                    		Keep track of your daily schedule and projects, while experiencing the best time of your life!
+	                    	</div>
+	                    </div>
+	                    <div class="more-features-box-text">
+	                    	<div class="more-features-box-text-icon">
+	                    		<i class="fa fa-mobile"></i>
+	                    	</div>
+	                    	<h3>Mobile ready</h3>
+	                    	<div class="more-features-box-text-description">
+	                    		Navigate through sections wiht just one click. Mobile ready. Experince the full power of the application in your smartphone!
+	                    	</div>
+	                    </div>
+	                    <div class="more-features-box-text">
+	                    	<div class="more-features-box-text-icon">
+	                    		<i class="fa fa-twitter"></i>
+	                    	</div>
+	                    	<h3>Social Integrated</h3>
+	                    	<div class="more-features-box-text-description">
+	                    		Log in with social networks and share your thoughts, projects and notes on the largest social platforms nowadays!
+	                    	</div>
+	                    </div>
+	                    
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Great support -->
+        <div class="great-support-container section-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 great-support section-description wow fadeIn">
+	                    <h2><strong>Great</strong> support</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-7 great-support-box wow fadeInLeft">
+	                    <div class="great-support-box-text great-support-box-text-left">
+	                    	<h3>Ut wisi enim ad minim</h3>
+	                    	<p class="medium-paragraph">
+	                    		Lorem ipsum dolor sit amet, <span class="colored-text">consectetur adipisicing</span> elit, 
+	                    		sed do eiusmod tempor incididunt ut labore et. Ut wisi enim ad minim veniam, quis nostrud.
+	                    	</p>
+	                    	<p>
+	                    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.
+	                    		Ut wisi enim ad minim veniam, quis nostrud. 
+	                    		Exerci tation ullamcorper suscipit <span class="colored-text">lobortis nisl</span> ut aliquip ex ea commodo consequat. 
+	                    		Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl. 
+	                    	</p>
+	                    </div>
+	                </div>
+	                <div class="col-sm-5 great-support-box wow fadeInUp">
+	                    <img src="images/devices/pc.png" alt="">
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- How it works -->
+        <div class="how-it-works-container section-container section-container-image-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 how-it-works section-description wow fadeIn">
+	                    <h2><strong>How</strong> it works</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                </div>
+	            </div>
+	            <div class="row">
+                	<div class="col-sm-4 col-sm-offset-1 how-it-works-box wow fadeInUp">
+	                	<div class="how-it-works-box-icon">1</div>
+	                    <h3>Sign up</h3>
+	                    <p>Register to our application in just 3 simple steps!</p>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-2 how-it-works-box wow fadeInDown">
+	                	<div class="how-it-works-box-icon">2</div>
+	                    <h3>Log in</h3>
+	                    <p>Log in using your created account, or using any top social network</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-1 how-it-works-box wow fadeInUp">
+	                	<div class="how-it-works-box-icon">3</div>
+	                    <h3>Manage your projects</h3>
+	                    <p>Take time to yourself and let us do the har work planning your daily schedule and work load!</p>
+                    </div>
+                    <div class="col-sm-4 col-sm-offset-2 how-it-works-box wow fadeInDown">
+	                	<div class="how-it-works-box-icon">4</div>
+	                    <h3>Succeed in college</h3>
+	                    <p>You now have all the tools you need in your hands to succeed in college and in life!</p>
+                    </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-12 section-bottom-button wow fadeInUp">
+                        <a class="btn btn-link-1 scroll-link" href="login.php">Sign up now</a>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Testimonials -->
+        <div class="testimonials-container section-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 testimonials section-description wow fadeIn">
+	                    <h2><strong>Our</strong> clients</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-10 col-sm-offset-1 testimonial-list wow fadeInUp">
+	                	<div role="tabpanel">
+	                		<!-- Tab panes -->
+	                		<div class="tab-content">
+	                			<div role="tabpanel" class="tab-pane fade in active" id="tab1">
+	                				<div class="testimonial-image">
+	                					<img src="images/testimonials/1.jpg" alt="" data-at2x="images/testimonials/1.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur..."<br>
+		                                	<a href="">Lorem Ipsum, dolor.co.uk</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                			<div role="tabpanel" class="tab-pane fade" id="tab2">
+	                				<div class="testimonial-image">
+	                					<img src="images/testimonials/2.jpg" alt="" data-at2x="images/testimonials/2.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
+		                                	ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+		                                	lobortis nisl ut aliquip ex ea commodo consequat..."<br>
+		                                	<a href="">Minim Veniam, nostrud.com</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                			<div role="tabpanel" class="tab-pane fade" id="tab3">
+	                				<div class="testimonial-image">
+	                					<img src="images/testimonials/3.jpg" alt="" data-at2x="images/testimonials/3.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+		                                	Lorem ipsum dolor sit amet, consectetur..."<br>
+		                                	<a href="">Lorem Ipsum, dolor.co.uk</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                			<div role="tabpanel" class="tab-pane fade" id="tab4">
+	                				<div class="testimonial-image">
+	                					<img src="images/testimonials/4.jpg" alt="" data-at2x="images/testimonials/4.jpg">
+	                				</div>
+	                				<div class="testimonial-text">
+		                                <p>
+		                                	"Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
+		                                	ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+		                                	lobortis nisl ut aliquip ex ea commodo consequat..."<br>
+		                                	<a href="">Minim Veniam, nostrud.com</a>
+		                                </p>
+	                                </div>
+	                			</div>
+	                		</div>
+	                		<!-- Nav tabs -->
+	                		<ul class="nav nav-tabs" role="tablist">
+	                			<li role="presentation" class="active">
+	                				<a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                			<li role="presentation">
+	                				<a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                			<li role="presentation">
+	                				<a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                			<li role="presentation">
+	                				<a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"></a>
+	                			</li>
+	                		</ul>
+	                	</div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+        
+        <!-- Call to action -->
+        <div class="call-to-action-container section-container section-container-image-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 call-to-action section-description wow fadeInLeftBig">
+	                    <h2><strong>Call</strong> to action</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                    <p>
+	                    	Knowledge is power and <strong>YOU</strong> will know a lot!
+                            <br>
+                            With M8Reborn, you will be able to, not only, check your colleagues notes as well as keep track of your daily schedule and how you arrnage your projects tasks. Plus, you will be albe to have great grades, while not missing on any fun with our all-new hang out system!
+                            <br>
+                            What are you waiting for?
+	                    </p>
+	                </div>
+	            </div>
+	            <div class="row">
+	            	<div class="col-sm-12 section-bottom-button wow fadeInUp">
+                        <a class="btn btn-link-1 scroll-link" href="login.php">Sign up now</a>
+	            	</div>
+	            </div>
+	        </div>
+        </div>
+        
+        <div class="about-us-container section-container">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-sm-12 about-us section-description wow fadeIn">
+	                    <h2><strong>About</strong> us</h2>
+	                    <div class="divider-1 wow fadeInUp"><span></span></div>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-6 about-us-box wow fadeInUp">
+		                <div class="about-us-photo">
+		                	<img src="images/about/vitor.jpg" alt="" data-at2x="images/about/vitor.jpg">
+		                </div>
+	                    <h3>Vitor Monteiro</h3>
+	                    <p>CEO, CIO of Dreams Pursuit</p>
+	                    <div class="about-us-social">
+		                	<a href="#"><i class="fa fa-facebook"></i></a>
+		                	<a href="#"><i class="fa fa-dribbble"></i></a>
+		                    <a href="#"><i class="fa fa-twitter"></i></a>
+		                </div>
+	                </div>
+	                <div class="col-sm-6 about-us-box wow fadeInDown">
+		                <div class="about-us-photo">
+		                	<img src="images/about/lucas.png" alt="" data-at2x="images/about/lucas.png">
+		                </div>
+	                    <h3>Lucas Alves</h3>
+	                    <p>CCO of Dreams Pursuit</p>
+	                    <div class="about-us-social">
+		                	<a href="#"><i class="fa fa-facebook"></i></a>
+		                	<a href="#"><i class="fa fa-dribbble"></i></a>
+		                    <a href="#"><i class="fa fa-twitter"></i></a>
+		                </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+	        <div class="container">
+	        	<div class="row">
+                    <div class="col-sm-12 footer-social">
+                    	<a href="#"><i class="fa fa-facebook"></i></a>
+                    	<a href="#"><i class="fa fa-dribbble"></i></a>
+                    	<a href="#"><i class="fa fa-twitter"></i></a>
+                    	<a href="#"><i class="fa fa-instagram"></i></a>
+                    	<a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+	            </div>
+	            <div class="row">
+                    <div class="col-sm-12 footer-copyright">
+                    	&copy; M8Reborn by<a href="#"> Dreams Pursuit</a>.
+                    </div>
+                </div>
+	        </div>
+        </footer>
+
+
+        <!-- Javascript -->
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <script src="vendor/js/jquery.backstretch.min.js"></script>
+        <script src="vendor/js/wow.min.js"></script>
+        <script src="vendor/js/retina-1.1.0.min.js"></script>
+        <script src="vendor/js/waypoints.min.js"></script>
+        <script src="js/index.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="vendor/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

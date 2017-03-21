@@ -47,7 +47,7 @@
                                                 $type = $row["CO_TYPE"];
                                                 $desc = $row["CO_DESC"];
                                                  
-                                                $sql = mysqli_query($conn,"SELECT * FROM TEACHER WHERE T_NAME = '". mysqli_real_escape_string($conn, $name) ."'");
+                                                $sql = mysqli_query($conn,"SELECT * FROM TEACHER WHERE T_NAME = '". mysqli_real_escape_string($conn, $resp) ."'");
 
                                                 $photo = mysqli_fetch_array($sql,MYSQLI_ASSOC);
 

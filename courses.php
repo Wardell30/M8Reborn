@@ -3,6 +3,8 @@
     require_once('sidebar.php'); 
     require_once('topnavbar.php');
 
+//here comes the mysql part
+
 /* Course
 
 <div class="business-card" id="course1">

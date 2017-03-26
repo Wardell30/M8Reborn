@@ -93,14 +93,22 @@
                                 <div class="form-group">
                                     <label for="coord" class="form-control-label">Coordenator</label>
                                     <select name="coord" id="coord">
-                                        <?php 
-                                            $string = file_get_contents("teachers.json");
+                                        <?php
+                                            if(file_exists("teachers.json")){
+                                              $string = file_get_contents("teachers.json");
 
-                                            $json_a=json_decode($string,true);
+                                              $json_a=json_decode($string,true);
 
-                                            foreach ($json_a as $key){
-                                                echo "<option>" . $key . "</option>";
+                                              $count = 1;
+
+                                              foreach ($json_a as $key){
+                                                  echo "<option name=\"coord'.$count.'\">" . $key . "</option>";
+                                                  $count++;
+                                              }
+                                            } else {
+                                              echo "<option name=\"coord0\" disabled>No teachers registered, please register</option>";
                                             }
+
                                         ?>
                                     </select>
                                 </div>
@@ -136,34 +144,41 @@
                                     <input type="text" class="form-control" id="name" name="name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="partialTime" class="form-control-label">Partial Time</label>
-                                    <select name="partialTime">
-                                        <option value="yes">Yes</option>
-                                        <option value="no">No</option>
+                                    <label for="courseSelect" class="form-control-label">Course</label>
+                                    <select name="courseSelect" id="courseSelect">
+                                        <?php
+                                            if(file_exists("courses.json")){
+                                              $string = file_get_contents("courses.json");
+
+                                              $json_a=json_decode($string,true);
+
+                                              $count = 1;
+
+                                              foreach ($json_a as $key){
+                                                  echo "<option name=\"courseSelect'.$count.'\">" . $key . "</option>";
+                                                  $count++;
+                                              }
+                                            } else {
+                                              echo "<option name=\"courseSelect0\" disabled>No courses registered, please register</option>";
+                                            }
+
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="bac" class="form-control-label">Bachelor</label>
-                                    <input type="number" class="form-control" id="bac" name="bac" min="1">
+                                    <label for="ects" class="form-control-label">ECTS</label>
+                                    <input type="number" class="form-control" id="ects" name="ects" min="1" max="10">
                                 </div>
                                 <div class="form-group">
-                                    <label for="mas" class="form-control-label">Master</label>
-                                    <input type="number" class="form-control" id="mas" name="mas" min="1">
+                                    <label for="year" class="form-control-label">Year</label>
+                                    <input type="number" class="form-control" id="year" name="year" min="1" max="3">
                                 </div>
                                 <div class="form-group">
-                                    <label for="phd" class="form-control-label">PhD</label>
-                                    <input type="number" class="form-control" id="phd" name="phd" min="1">
+                                    <label for="sem" class="form-control-label">Semester</label>
+                                    <input type="number" class="form-control" id="sem" name="sem" min="1" max="2">
                                 </div>
                                 <div class="form-group">
-                                    <label for="wlocations" class="form-control-label">Work Locations</label>
-                                    <input type="text" class="form-control" id="wlocations" name="wlocations" min="1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="fileToUpload" class="form-control-label">Teacher Image</label>
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary" name="submit">Save</button>
+                                    <button type="submit" class="btn btn-primary" name="submitUC" id="submitUC">Save</button>
                                 </div>
                             </form>
                           </div>

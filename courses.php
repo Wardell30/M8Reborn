@@ -73,6 +73,7 @@
           $ects = $_REQUEST["ects"];
           $year = $_REQUEST["year"];
           $sem = $_REQUEST["sem"];
+          $teacher = $_REQUEST["teacher"];
 
           $ses_sql = mysqli_query($conn,"SELECT CO_ID FROM COURSE WHERE CO_NAME = '". mysqli_real_escape_string($conn, $course) ."'");
 
@@ -80,7 +81,7 @@
 
           $id = $row['CO_ID'];
 
-          $query = "INSERT INTO sql11160894.UC (UC_ID, UC_CO, UC_NAME, UC_ECTS, UC_SEM, UC_Y) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."','". mysqli_real_escape_string($conn, $name) ."','". mysqli_real_escape_string($conn, $ects) ."','". mysqli_real_escape_string($conn, $sem) ."','". mysqli_real_escape_string($conn, $year) ."')";
+          $query = "INSERT INTO sql11160894.UC (UC_ID, UC_CO, UC_TEAC, UC_NAME, UC_ECTS, UC_SEM, UC_Y) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $teacher) ."','". mysqli_real_escape_string($conn, $name) ."','". mysqli_real_escape_string($conn, $ects) ."','". mysqli_real_escape_string($conn, $sem) ."','". mysqli_real_escape_string($conn, $year) ."')";
 
           if ($conn->query($query) === TRUE) {
             header("location: courses.php");
@@ -289,6 +290,89 @@
                                              }
                                         ?>
                                     </div>
+                                    <div class="card card-nav-tabs">
+                                			<div class="header header-success">
+                                				<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                				<div class="nav-tabs-navigation">
+                                					<div class="nav-tabs-wrapper">
+                                						<ul class="nav nav-tabs" data-tabs="tabs">
+                                							<li class="active">
+                                								<a href="#profile" data-toggle="tab">
+                                									<i class="material-icons">face</i>
+                                									Profile
+                                								</a>
+                                							</li>
+                                							<li>
+                                								<a href="#messages" data-toggle="tab">
+                                									<i class="material-icons">chat</i>
+                                									Messages
+                                								</a>
+                                							</li>
+                                							<li>
+                                								<a href="#settings" data-toggle="tab">
+                                									<i class="material-icons">build</i>
+                                									Settings
+                                								</a>
+
+                                							</li>
+                                						</ul>
+                                					</div>
+                                				</div>
+                                			</div>
+                                			<div class="content">
+                                				<div class="tab-content text-center">
+                                					<div class="tab-pane active" id="profile">
+                                            <div class="header header-success">
+                                      				<!-- colors: "header-primary", "header-info", "header-success", "header-warning", "header-danger" -->
+                                      				<div class="nav-tabs-navigation">
+                                      					<div class="nav-tabs-wrapper">
+                                      						<ul class="nav nav-tabs" data-tabs="tabs">
+                                      							<li class="active">
+                                      								<a href="#profile" data-toggle="tab">
+                                      									<i class="material-icons">face</i>
+                                      									Profile
+                                      								</a>
+                                      							</li>
+                                      							<li>
+                                      								<a href="#messages" data-toggle="tab">
+                                      									<i class="material-icons">chat</i>
+                                      									Messages
+                                      								</a>
+                                      							</li>
+                                      							<li>
+                                      								<a href="#settings" data-toggle="tab">
+                                      									<i class="material-icons">build</i>
+                                      									Settings
+                                      								</a>
+
+                                      							</li>
+                                      						</ul>
+                                      					</div>
+                                      				</div>
+                                      			</div>
+                                      			<div class="content">
+                                      				<div class="tab-content text-center">
+                                      					<div class="tab-pane active" id="profile">
+                                      						<p> I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. </p>
+                                      					</div>
+                                      					<div class="tab-pane" id="messages">
+                                      						<p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
+                                      					</div>
+                                      					<div class="tab-pane" id="settings">
+                                      						<p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+                                      					</div>
+                                      				</div>
+                                      			</div>
+                                					</div>
+                                					<div class="tab-pane" id="messages">
+                                						<p> I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus. I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at.</p>
+                                					</div>
+                                					<div class="tab-pane" id="settings">
+                                						<p>I think that’s a responsibility that I have, to push possibilities, to show people, this is the level that things could be at. So when you get something that has the name Kanye West on it, it’s supposed to be pushing the furthest possibilities. I will be the leader of a company that ends up being worth billions of dollars, because I got the answers. I understand culture. I am the nucleus.</p>
+                                					</div>
+                                				</div>
+                                			</div>
+                                		</div>
                                 </div>
                                 <button class="w3-button w3-xlarge w3-circle w3-blue w3-hover-indigo w3-card-4 addBtn" id="addCourse">+</button>
                             </div>

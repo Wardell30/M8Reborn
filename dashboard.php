@@ -1,10 +1,9 @@
-<?php 
+<?php
     include('session.php');
-    require_once('sidebar.php'); 
+    require_once('sidebar.php');
     require_once('topnavbar.php');
 
 //aqui vai ter grafico com profs com numero de bac, mas e phd
-//so as coisas dos alunos e que vao estar em ficheiros tambem!
 //grafico com numero de alunos inscritos por departamento
 //
 ?>
@@ -37,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <?php require_once('footer.php'); ?>
 
 <script type="text/javascript">

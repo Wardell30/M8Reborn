@@ -102,6 +102,12 @@
                                 </li>';
                                     }
                                 ?>
+                                <li id="newsNav">
+                                    <a href="news.php">
+                                        <i class="pe-7s-news-paper"></i>
+                                        <p>News</p>
+                                    </a>
+                                </li>
                                 <li class="active-pro">
                                     <a href="profile.php">
                                         <i class="pe-7s-user"></i>

@@ -1,7 +1,7 @@
-<?php 
+<?php
     include('session.php');
     include('config.php');
-    require_once('sidebar.php'); 
+    require_once('sidebar.php');
     require_once('topnavbar.php');
 
     error_reporting(E_ALL ^ E_WARNING);
@@ -13,7 +13,7 @@
         $mas = $_REQUEST['mas'];
         $phd = $_REQUEST['phd'];
         $wlocations = $_REQUEST['wlocations'];
-        
+
         $target_dir = "images/teachers/";
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
@@ -27,23 +27,23 @@
                 $uploadOk = 0;
             }
         }
-        
+
         // Check if file already exists
         if (file_exists($target_file)) {
             $uploadOk = 0;
         }
-        
+
         // Check file size
         if ($_FILES["fileToUpload"]["size"] > 500000) {
             $uploadOk = 0;
         }
-        
+
         // Allow certain file formats
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
         && $imageFileType != "gif" ) {
             $uploadOk = 0;
         }
-        
+
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
             header('teachers.php');
@@ -53,37 +53,37 @@
                 </div>';
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                
+
                 $file = basename( $_FILES["fileToUpload"]["name"]);
-                
+
                 $university = $_SESSION['login_user'];
-                
+
                 $ses_sql = mysqli_query($conn,"SELECT UNI_ID FROM UNI WHERE UNI_NAME = '". mysqli_real_escape_string($conn, $university) ."'");
-   
+
                 $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
                 $id = $row['UNI_ID'];
-                                
+
                 $query = "INSERT INTO sql11160894.TEACHER (T_ID, T_UNI, T_NAME, T_PAR, T_BAC, T_MAS, T_PHD, T_WPL, T_PHLOC) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $name) ."', '". mysqli_real_escape_string($conn, $partial) ."', '". mysqli_real_escape_string($conn, $bac) ."', '". mysqli_real_escape_string($conn, $mas) ."', '". mysqli_real_escape_string($conn, $phd) ."', '". mysqli_real_escape_string($conn, $wlocations) ."', '". mysqli_real_escape_string($conn, $file) ."');";
-                
+
                 if ($conn->query($query) === TRUE) {
-                    
+
                     $myfile = fopen("teachers.json", "r") or die("Unable to open file!");
-                    
+
                     $string = fread($myfile,filesize("teachers.json"));
-                    
+
                     fclose($myfile);
-                    
+
                     unlink('teachers.json');
-                    
+
                     $string = substr($string, 0, -1) . ",\"" . $name . "\"]";
-                    
+
                     $myfile = fopen("teachers.json", "w") or die ("Unable to open file!");
-            
+
                     fwrite($myfile, $string);
 
                     fclose($myfile);
-                    
+
                     header('teachers.php');
                     echo '<div class="alert alert-success alert-dismissable fade in">
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -110,20 +110,20 @@
                                     </div>
                                     <div class="content all-icons">
                                         <div class="row">
-                                            <?php 
+                                            <?php
                                                 $university = $_SESSION['login_user'];
-                                                
+
                                                 $ses_sql = mysqli_query($conn,"SELECT UNI_ID FROM UNI WHERE UNI_NAME = '". mysqli_real_escape_string($conn, $university) ."'");
-   
+
                                                 $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
-                                                $uniID = $row['UNI_ID'];  
-                                            
+                                                $uniID = $row['UNI_ID'];
+
                                                 $result = mysqli_query($conn, "SELECT * FROM TEACHER WHERE T_UNI = '". mysqli_real_escape_string($conn, $uniID) ."'");
-                                            
+
                                                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                                                     $name = $row["T_NAME"];
-                                                    
+
                                                     if($row["T_PAR"] == 0){
                                                         $partial = "Partial Time";
                                                     } else {
@@ -134,7 +134,24 @@
                                                     $phd = $row["T_PHD"];
                                                     $wpl = $row["T_WPL"];
                                                     $photo = $row["T_PHLOC"];
-                                                    
+
+                                                    $search = mysqli_query($conn, "SELECT UC_NAME FROM UC WHERE UC_TEAC = '". mysqli_real_escape_string($conn, $name) ."'");
+
+                                                    $uclist = "";
+
+                                                    $count = 0;
+
+                                                    while ($ucs = mysqli_fetch_array($search, MYSQLI_ASSOC)) {
+                                                      if($count < 3){
+                                                        $uclist .= "<li class=\"jobdescr\">".$ucs["UC_NAME"]."</li>";
+                                                      }
+                                                      $count++;
+                                                    }
+
+                                                    if($uclist == ""){
+                                                      $uclist = "<li class=\"jobdescr\">No info</li>";
+                                                    }
+
                                                     echo '<div class="col-md-4 col-sm-6">
                                                 <div class="card2-container">
                                                     <div class="card2">
@@ -159,11 +176,7 @@
                                                                 <div class="main">
                                                                     <h4 class="text-center">Job Description</h4>
                                                                     <ul class="joblist">
-                                                                        <li class="jobdescr">No Info</li>
-                                                                        <li class="jobdescr">No Info</li>
-                                                                        <li class="jobdescr">No Info</li>
-                                                                        <li class="jobdescr">No Info</li>
-                                                                        <li class="jobdescr">No Info</li>
+                                                                        '.$uclist.'
                                                                     </ul>
                                                                     <div class="stats-container">
                                                                         <div class="stats">
@@ -191,12 +204,18 @@
                                                     </div> <!-- end card -->
                                                 </div> <!-- end card-container -->
                                             </div> <!-- end col-sm-3 -->';
-                                                } 
+                                                }
                                             ?>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="w3-button w3-xlarge w3-circle w3-blue w3-hover-indigo w3-card-4 addBtn" id="addBtn">+</button>
+                                <div class="addBtn">
+                                  <a href="pdf.php" target="_blank">
+                                  <button type="button" class="w3-btn w3-blue w3-border w3-border-blue w3-round-large" id="exportBtn">
+                                    <span class="glyphicon glyphicon-export"></span> Export
+                                  </button></a>
+                                  <button class="w3-button w3-xlarge w3-circle w3-blue w3-hover-indigo w3-card-4" id="addBtn">+</button>
+                                </div>
                             </div>
                         </div>
                     </div>

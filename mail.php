@@ -5,7 +5,7 @@
     $message .= '<p>Hello, ' . $_COOKIE["user"] . '</p>';
     $message .= '<p>In order to access the application you need to confirm your account</p>';
     $message .= '<p>You can do that by clicking the button bellow</p>';
-    $message .= '<a href=\'http://localhost/Project/activate.php\'><button>Confirm Account</button></a>';
+    $message .= '<a href=\'http://localhost/M8Reborn/activate.php\'><button>Confirm Account</button></a>';
     $message .= '</body>';
     $message .= '</html>';
 
@@ -71,7 +71,7 @@
     if (!$mail->send()) {
         echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        
+
         echo '<!DOCTYPE html>
 <html>
 <head>
@@ -112,10 +112,10 @@
 </div>
 </body>
 </html>';
-        
+
         $cookie_mail_sent = 'mail_sent';
         $cookie_value_mail_sent = true;
-            
+
         setcookie($cookie_mail_sent, $cookie_value_mail_sent, time() + (86400 * 30), "/");
         header('location:login.php');
     }

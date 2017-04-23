@@ -24,7 +24,22 @@
                                         <b class="caret"></b>
                                         <span class="notification">5</span>
                                     </a>
-                                    
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Notification 1</a></li>
+                                        <li><a href="#">Notification 2</a></li>
+                                        <li><a href="#">Notification 3</a></li>
+                                        <li><a href="#">Notification 4</a></li>
+                                        <li><a href="#">Another notification</a></li>
+                                  </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i id="placeIcon" class="fa fa-comments"></i>
+                                        <b class="caret"></b>
+                                        <span class="notification">5</span>
+                                    </a>
+
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Notification 1</a></li>
                                         <li><a href="#">Notification 2</a></li>
@@ -34,15 +49,12 @@
                                   </ul>
                                 </li>
                                 <li id="searchLi">
-                                    <span class="input input--nao">
-                                        <input class="input__field input__field--nao" type="text" id="searchBar" />
-                                        <label class="input__label input__label--nao" for="searchBar">
-                                            <span class="input__label-content input__label-content--nao"><i class="fa fa-search"></i>Search</span>
-                                        </label>
-                                        <svg class="graphic graphic--nao" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-                                            <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"/>
-                                        </svg>
-                                    </span>
+                                  <form role="form" action="" method="post" class="l-form">
+                                    <div class="form-group">
+                                      <label class="sr-only" for="l-form-search">Search</label>
+                                      <input type="text" name="l-form-search" placeholder="Search..." class="l-form-search form-control" id="l-form-search">
+                                    </div>
+                                  </form>
                                 </li>
                                 <li>
                                     <a id="time"></a>

@@ -1,13 +1,13 @@
 <?php
     $string = file_get_contents($_COOKIE["user"] . ".json");
-                
+
     $json_a=json_decode($string,true);
 
     foreach ($json_a as $key => $value){
         if($key === 'student'){
             $student = $value;
         }
-        
+
         if($key === 'email'){
             $mail = $value;
         }
@@ -15,30 +15,79 @@
 
     include('config.php');
 
+    $universities = "";
+
+    $sql = "SELECT UNI_NAME FROM UNI";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $universities = $universities . '<option name=\"'.$row['UNI_NAME'].'\"> '. $row['UNI_NAME'] . '</option>';
+        }
+    } else {
+      $universities = "<option name=\"uni0\" disabled>No universities registered, please register</option>";
+    }
+
+    $courses = "";
+
+    $sql = "SELECT CO_NAME FROM COURSE";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $courses = $courses . '<option name=\"'.$row['CO_NAME'].'\"> '. $row['CO_NAME'] . '</option>';
+        }
+    } else {
+      $courses = "<option name=\"course0\" disabled>No Courses registered, please register</option>";
+    }
+
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["confirm"])){
-            
+
             $country = $_REQUEST['r-form-country'];
             $state = $_REQUEST['r-form-states'];
             $address = $_REQUEST['r-form-address'];
             $zip = $_REQUEST['r-form-zip'];
-            
+
             if($student == 0){
                 $fname = $_REQUEST['r-form-first-name'];
                 $lname = $_REQUEST['r-form-last-name'];
-                $university = $_REQUEST['r-form-university'];
-                $course = $_REQUEST['r-form-course'];
+                $uni = $_REQUEST['universitiesSelect'];
+                $course = $_REQUEST['coursesSelect'];
                 $studentN = $_REQUEST['r-form-student-number'];
                 $about = $_REQUEST['r-form-about-yourself'];
-                
-                $query = "INSERT INTO sql11160894.USER (ID, firstName, lastName, address, city, country, zipCode, university, course, studentNumber, universityConfirmation, aboutMe, active) VALUES ('', '". mysqli_real_escape_string($conn, $fname) ."', '". mysqli_real_escape_string($conn, $lname) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $university) ."', '". mysqli_real_escape_string($conn, $course) ."', '". mysqli_real_escape_string($conn, $studentN) ."', '0', '". mysqli_real_escape_string($conn, $about) ."', '0')";
-                
+
+                $sql = "SELECT UNI_ID, UNI_MS FROM UNI WHERE UNI_NAME='". $uni ."'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $uniID = $row["UNI_ID"];
+                        $suffix = $row["UNI_MS"];
+                    }
+                } else {
+                }
+
+                $sql = "SELECT CO_ID FROM COURSE WHERE CO_NAME='". $course ."'";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $courseID = $row["CO_ID"];
+                    }
+                } else {
+                }
+
+                $uniMail = $studentN . "@" . $suffix;
+
+                $query = "INSERT INTO sql11160894.USER (U_ID, U_UNAME, U_FN, U_LN, U_ADD, U_COUN, U_CT, U_ZIP, U_M, U_SM, U_UNI_ID, U_CO_ID, U_SN, U_AB, U_ACT) VALUES ('', '". mysqli_real_escape_string($conn, $_COOKIE["user"]) ."', '". mysqli_real_escape_string($conn, $fname) ."', '". mysqli_real_escape_string($conn, $lname) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $mail) ."', '". mysqli_real_escape_string($conn, $uniMail) ."', '". mysqli_real_escape_string($conn, $uniID) ."', '". mysqli_real_escape_string($conn, $courseID) ."', '". mysqli_real_escape_string($conn, $studentN) ."', '". mysqli_real_escape_string($conn, $about) ."', '0')";
+
             } else {
                 $since = $_REQUEST['r-form-since'];
                 $hm = $_REQUEST['r-form-hm'];
                 $vhm = $_REQUEST['r-form-vhm'];
                 $ms = $_REQUEST['r-form-ms'];
-                
+
                 $query = "INSERT INTO sql11160894.UNI (UNI_ID, UNI_NAME, UNI_M, UNI_COUN, UNI_CT, UNI_ADD, UNI_ZIP, UNI_SIN, UNI_HM, UNI_VHM, UNI_MS) VALUES (NULL, '". mysqli_real_escape_string($conn, $student) ."', '". mysqli_real_escape_string($conn, $mail) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $since) ."', '". mysqli_real_escape_string($conn, $hm) ."', '". mysqli_real_escape_string($conn, $vhm) ."', '". mysqli_real_escape_string($conn, $ms) ."')";
             }
 
@@ -46,12 +95,11 @@
             if ($conn->query($query) === TRUE) {
                 include('mail.php');
             } else {
-                echo 'wtf';
             }
         }
     }
-    
-    
+
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +134,7 @@
         <!-- Top content -->
         <div class="top-content">
         	<div class="container">
-                	
+
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
                         <h1>Welcome to M8Reborn, <?php echo $_COOKIE["user"]; ?>!</h1>
@@ -98,13 +146,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-2 show-forms">
-                    	<span class="show-register-form active">Register</span> 
+                    	<span class="show-register-form active">Register</span>
                     </div>
                 </div>
-                
+
                 <div class="row register-form">
                     <div class="col-sm-10 col-sm-offset-1">
 						<form role="form" action="" method="post" class="r-form">
@@ -156,23 +204,23 @@
                                 </div>';
                                     }
                                 ?>
-                                
+
                             </div>
-	                    	
+
 	                        <div class="col-sm-5">
-                                <?php 
+                                <?php
                                     if($student == 0){
                                         echo '<div class="form-group">
-                                    <label class="sr-only" for="r-form-university">University</label>
-                                    <input type="text" name="r-form-university" placeholder="University..." class="r-form-university form-control" id="r-form-university">
+                                        <label class="sr-only" for="universitiesSelect">University</label>
+                                        <select class="input-medium form-control" name="universitiesSelect" id="universitiesSelect">
+                                        '.$universities.'
+                                        </select>
                                 </div>
                                 <div class="form-group">
-                                    <label class="sr-only" for="r-form-course">Course</label>
-                                    <input type="text" name="r-form-course" placeholder="Course..." class="r-form-course form-control" id="r-form-course">
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only" for="r-form-uniMail">University Email</label>
-                                    <input type="text" name="r-form-uniMail" placeholder="University Email..." class="r-form-uniMail form-control" id="r-form-uniMail">
+                                <label class="sr-only" for="coursesSelect">Course</label>
+                                <select class="input-medium form-control" name="coursesSelect" id="coursesSelect">
+                                <option value="">Course</option>'.$courses.'
+                                </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="r-form-student-number">Student Number</label>
@@ -180,7 +228,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="r-form-about-yourself">About yourself</label>
-                                    <textarea name="r-form-about-yourself" placeholder="About yourself..." 
+                                    <textarea name="r-form-about-yourself" placeholder="About yourself..."
                                                 class="r-form-about-yourself form-control" id="r-form-about-yourself"></textarea>
                                 </div>';
                                     } else {
@@ -206,7 +254,7 @@
 				            <button type="submit" class="btn" name="confirm">Confirm!</button>
 						</form>
                     </div>
-                </div> 
+                </div>
         	</div>
         </div>
 
@@ -216,9 +264,9 @@
         		<div class="row">
         			<div class="col-sm-8 col-sm-offset-2">
         				<div class="footer-border"></div>
-        				<p>Made by <a href="#" target="_blank">Dreams Pursuit</a>.</p>
+        				<p>Made by <a href="index.php" target="_blank">Dreams Pursuit</a>.</p>
         			</div>
-        			
+
         		</div>
         	</div>
         </footer>
@@ -229,7 +277,7 @@
         <script src="vendor/js/jquery.backstretch.min.js"></script>
         <script src="vendor/js/bootstrap-formhelpers.min.js"></script>
         <script src="js/continue.js"></script>
-        
+
         <!--[if lt IE 10]>
             <script src="vendor/js/placeholder.js"></script>
         <![endif]-->

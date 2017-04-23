@@ -12,7 +12,7 @@
                             </ul>
                         </nav>
                         <p class="copyright pull-right">
-                            &copy; 2017 <a href="dashboard.php">Dreams Pursuit</a>, Never stop dreaming 'till you get there
+                            &copy; 2017 <a href="index.php">Dreams Pursuit</a>, Never stop dreaming 'till you get there
                         </p>
                     </div>
                 </footer>
@@ -166,6 +166,28 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="teacher" class="form-control-label">Teacher</label>
+                                    <select name="teacher" id="teacher">
+                                        <?php
+                                            if(file_exists("teachers.json")){
+                                              $string = file_get_contents("teachers.json");
+
+                                              $json_a=json_decode($string,true);
+
+                                              $count = 1;
+
+                                              foreach ($json_a as $key){
+                                                  echo "<option name=\"teacher'.$count.'\">" . $key . "</option>";
+                                                  $count++;
+                                              }
+                                            } else {
+                                              echo "<option name=\"teacher0\" disabled>No teachers registered, please register</option>";
+                                            }
+
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="ects" class="form-control-label">ECTS</label>
                                     <input type="number" class="form-control" id="ects" name="ects" min="1" max="10">
                                 </div>
@@ -190,11 +212,15 @@
                 </div>
             </div>
         </div>
+
+        </div>
+      </div>
     </body>
 
     <!--   Core JS Files   -->
     <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+	  <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/news.js" type="text/javascript"></script>
     <script src="js/matereborn.js" type="text/javascript"></script>
     <script src="vendor/js/bootstrap-notify.js" type="text/javascript"></script>
     <script src="vendor/js/bootstrap-select.js" type="text/javascript"></script>

@@ -10,9 +10,10 @@ window.onload = function(){
     var teachersNav = document.getElementById("teachersNav");
     var place = document.getElementById("place");
     var placeIcon = document.getElementById("placeIcon");
-    
+    var news = document.getElementById("newsNav");
+
     //change icon after
-    
+
     if(window.location.href.indexOf("dashboard") > -1) {
         removeActiveClass();
         dashboardNav.className = "active";
@@ -54,45 +55,54 @@ window.onload = function(){
         place.innerHTML = "Courses/UCs";
         placeIcon.className = "pe-7s-note2";
     } else if(window.location.href.indexOf("teachers") > -1){
-        removeActiveClass();
-        teachersNav.className = "active";
-        place.innerHTML = "Teachers";
-        placeIcon.className = "pe-7s-user";
+      removeActiveClass();
+      teachersNav.className = "active";
+      place.innerHTML = "Teachers";
+      placeIcon.className = "pe-7s-user";
+    } else if(window.location.href.indexOf("news") > -1){
+      removeActiveClass();
+      newsNav.className = "active";
+      place.innerHTML = "News";
+      placeIcon.className = "pe-7s-news-paper";
     }
-    
+
     function removeActiveClass(){
         dashboardNav.className = "";
-        
+
         if(uniTrackerNav !== null){
             uniTrackerNav.className = "";
         }
-        
+
         if(budgetTrackerNav !== null){
             budgetTrackerNav.className = "";
         }
-        
+
         if(noteTakingNav !== null){
             noteTakingNav.className = "";
         }
-        
+
         if(settingsNav !== null){
             settingsNav.className = "";
         }
-        
+
         if(profileNav !== null){
             profileNav.className = "";
         }
-        
+
         if(hangout !== null){
             hangout.className = "";
         }
-        
+
         if(courseNav !== null){
             courseNav.className = "";
         }
-        
+
         if(teachersNav !== null){
             teachersNav.className = "";
+        }
+
+        if(newsNav !== null){
+          newsNav.className = "";
         }
     }
 }

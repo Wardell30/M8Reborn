@@ -132,10 +132,270 @@ h1 .subtitle {
   color: #FF4A55 !important;
 }
 
+/*    chat    */
+
+ul .person {
+  list-style: none;
+}
+
+.people {
+  margin-left: -20px;
+  width: -moz-calc(100% + 2px);
+  width: -webkit-calc(100% + 2px);
+  width: -o-calc(100% + 2px);
+  width: calc(100% + 2px);
+}
+  .people .person {
+  position: relative;
+  width: 100%;
+  padding: 12px 10% 16px;
+  cursor: pointer;
+  background-color: #fff;
+}
+  .people .person:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: block;
+  width: 80%;
+  height: 1px;
+  content: '';
+  background-color: #e6e6e6;
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+  .people .person img {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+  .people .person .name {
+  font-size: 14px;
+  line-height: 22px;
+  color: #1a1a1a;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+  .people .person .time {
+  font-size: 14px;
+  position: absolute;
+  top: 16px;
+  right: 10%;
+  padding: 0 0 5px 5px;
+  color: #999;
+  background-color: #fff;
+}
+  .people .person .preview {
+  font-size: 14px;
+  display: inline-block;
+  overflow: hidden !important;
+  width: 70%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999;
+}
+  .people .person.active,   .people .person:hover {
+  margin-top: -1px;
+  margin-left: -1px;
+  padding-top: 13px;
+  border: 0;
+  background-color: #00b0ff;
+  width: -moz-calc(100% + 2px);
+  width: -webkit-calc(100% + 2px);
+  width: -o-calc(100% + 2px);
+  width: calc(100% + 2px);
+  padding-left: -moz-calc(10% + 1px);
+  padding-left: -webkit-calc(10% + 1px);
+  padding-left: -o-calc(10% + 1px);
+  padding-left: calc(10% + 1px);
+}
+  .people .person.active span,   .people .person:hover span {
+  color: #fff;
+  background: transparent;
+}
+  .people .person.active:after,   .people .person:hover:after {
+  display: none;
+}
+
+#freeSpace {
+  height: 30px;
+}
+
+.chatContainer {
+  height: 530px;
+}
+
+.chatTo{
+  height: 50px;
+  background-color: #d3d3d3;
+  margin-top: -8px;
+}
+
+.chatTo > h4{
+  padding-top: 10px;
+  margin-left: 20px;
+  font-size: 1em;
+}
+
+.messagesDiv {
+  height: 400px;
+  overflow-y: auto;
+  max-height: 400px;
+  width: 90%;
+  margin-top: 10px;
+  margin-left: 5%;
+}
+
+.scrollPeople {
+  overflow-y: auto;
+  height: 397px;
+  max-height: 397px;
+}
+
+#l-form-message{
+  width: 80%;
+  margin-right: 0;
+  margin-left: 5%;
+  float: left;
+}
+
+#sendMessageBtn {
+  background-color: white;
+  border: none;
+  color: #00b0ff;
+  margin-left: 25px;
+  margin-top: 8px;
+}
+
+  .bubble {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+  margin-bottom: 8px;
+  padding: 13px 14px;
+  vertical-align: top;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+  .bubble:before {
+  position: absolute;
+  top: 19px;
+  display: block;
+  width: 8px;
+  height: 6px;
+  content: '\00a0';
+  -moz-transform: rotate(29deg) skew(-35deg);
+  -ms-transform: rotate(29deg) skew(-35deg);
+  -webkit-transform: rotate(29deg) skew(-35deg);
+  transform: rotate(29deg) skew(-35deg);
+}
+  .bubble.you {
+  float: left;
+  color: #fff;
+  background-color: #00b0ff;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  -moz-animation-name: slideFromLeft;
+  -webkit-animation-name: slideFromLeft;
+  animation-name: slideFromLeft;
+}
+  .bubble.you:before {
+  left: -3px;
+  background-color: #00b0ff;
+}
+  .bubble.me {
+  float: right;
+  color: #1a1a1a;
+  background-color: #eceff1;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+  -moz-animation-name: slideFromRight;
+  -webkit-animation-name: slideFromRight;
+  animation-name: slideFromRight;
+}
+  .bubble.me:before {
+  right: -3px;
+  background-color: #eceff1;
+}
+  .conversation-start {
+  position: relative;
+  width: 100%;
+  margin-bottom: 27px;
+  text-align: center;
+}
+  .conversation-start span {
+  font-size: 14px;
+  display: inline-block;
+  color: #999;
+}
+  .conversation-start span:before,   .conversation-start span:after {
+  position: absolute;
+  top: 10px;
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  content: '';
+  background-color: #e6e6e6;
+}
+  .conversation-start span:before {
+  left: 0;
+}
+  .conversation-start span:after {
+  right: 0;
+}
+
+.chat {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.chat.active-chat {
+  display: block;
+  display: -webkit-flex;
+  display: flex;
+}
+
 /*     search bar       */
 
+.l-form {
+  padding-top: 20px;
+}
+.l-form .form-group {
+  margin-bottom: 25px;
+  margin-left: 5%;
+  width: 90%;
+}
+.l-form .input-error { border-color: #D21502; }
+
+.card > hr {
+  margin-left: 10%;
+  width: 80%;
+}
+
 #searchLi{
-    margin-top: -6%;
+    margin-top: -1%;
+}
+
+#searchLi #l-form-search {
+  height: 30px;
+  border-width: 0 0 1px 0;
+}
+
+#searchLi #l-form-search:focus {
+  height: 30px;
+  border-width: 0 0 2px 0;
 }
 
 .input {
@@ -259,6 +519,8 @@ body,
   min-height: 100vh;
   position: relative;
 }
+
+
 
 #logo-nav{
     width: 50px;
@@ -2044,6 +2306,16 @@ body > .navbar-collapse[data-color="purple"]:after {
   color: #333333;
   font-weight: 300;
 }
+
+.card .tabsSections{
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.card .tabsSections button {
+  margin-bottom: 10px;
+}
+
 .card .avatar {
   width: 30px;
   height: 30px;
@@ -3635,6 +3907,16 @@ body > .navbar-collapse[data-color="purple"]:after {
 .card2 .cover img{
     width: 100%;
 }
+
+.card2 .bigcover{
+    height: 170px;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+.card2 .bigcover img{
+    width: 100%;
+}
+
 .card2 .user{
     border-radius: 50%;
     display: block;
@@ -3715,7 +3997,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     margin-top: 10px;
 }
 .jobdescr{
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     font-size: 1.2em;
 }
 .space-30{
@@ -3907,4 +4189,3 @@ body > .navbar-collapse[data-color="purple"]:after {
   text-align: center;
   background: #fff;
 }
-

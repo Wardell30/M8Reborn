@@ -12,7 +12,7 @@
 
     if($delivered == 0){
       echo $message;
-      $ses_sql = mysqli_query($conn,"UPDATE sql11160894.MESSA SET MES_DEL = '1' WHERE MESSA.MES_ID = ".$id.";");
+      $ses_sql = mysqli_query($conn,"UPDATE MESSA SET MES_DEL = '1' WHERE MESSA.MES_ID = ".$id.";");
     }
   }
 ?>

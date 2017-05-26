@@ -5,7 +5,7 @@
                   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                   <strong>Info!</strong> Check your email in order to activate the account!
                 </div>';
-            
+
             unset($_COOKIE['mail_sent']);
             setcookie('mail_sent', '', time() - 3600, '/');
         }
@@ -14,8 +14,8 @@
    include("config.php");
    session_start();
     error_reporting(E_ALL ^ E_WARNING);
-   
-    if($_SERVER["REQUEST_METHOD"] == "POST") { 
+
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST["login"])){
             $user = $_REQUEST['l-form-username'];
             $pass = hash('sha512', $_POST['l-form-password']);
@@ -24,55 +24,55 @@
             $result = mysqli_query($conn,$query);
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['login_user'] = $user;
-                
+
                 $ses_sql = mysqli_query($conn,"SELECT L_UNI FROM LOGIN WHERE L_UNAME = '". mysqli_real_escape_string($conn, $user) ."'");
-   
+
                 $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
 
                 $value = $row['L_UNI'];
-                
+
                 $_SESSION['university'] = $value;
-                
+
                 header("location:dashboard.php");
             } else {
                 header("location:login.php");
             }
         } else if(isset($_POST["register"])){
-            
-            //save fields in json file 
+
+            //save fields in json file
             $user = $_POST['r-form-username'];
             $pass = hash('sha512', $_POST['r-form-password']);
             $mail = $_POST['r-form-email'];
             $student = $_POST['student'];
-            
+
             if($student == "on"){
                 $student = 1;
             } else {
                 $student = 0;
             }
-            
+
             $cookie_name = 'user';
             $cookie_value = $user;
-            
+
             $cookie_mail = 'mail';
             $cookie_value_mail = $mail;
-            
+
             setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
             setcookie($cookie_mail, $cookie_value_mail, time() + (86400 * 30), "/");
-            
+
             $myObj->username = $user;
             $myObj->pass = $pass;
             $myObj->email = $mail;
             $myObj->student = $student;
-            
+
             $myJSON = json_encode($myObj);
-            
+
             $myfile = fopen($user . ".json", "w") or die ("Unable to open file!");
-            
+
             fwrite($myfile, $myJSON);
-            
+
             fclose($myfile);
-            
+
             header("location:continue.php");
         }
    }
@@ -110,7 +110,7 @@
         <!-- Top content -->
         <div class="top-content">
         	<div class="container">
-                	
+
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
                         <h1>Welcome to M8Reborn</h1>
@@ -121,15 +121,15 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1 show-forms">
-                    	<span class="show-login-form active">Login</span> 
-                    	<span class="show-forms-divider">/</span> 
+                    	<span class="show-login-form active">Login</span>
+                    	<span class="show-forms-divider">/</span>
                     	<span class="show-register-form">Register</span>
                     </div>
                 </div>
-                
+
                 <div class="row login-form">
                     <div class="col-sm-4 col-sm-offset-1">
 						<form role="form" action="" method="post" class="l-form">
@@ -176,7 +176,7 @@
 						</div>
                     </div>
                 </div>
-                
+
                 <div class="row register-form register-register">
                     <div class="col-sm-4 col-sm-offset-1">
 						<form role="form" action="" method="post" class="r-form">
@@ -192,7 +192,7 @@
 	                        	<label class="sr-only" for="r-form-email">Email</label>
 	                        	<input type="text" name="r-form-email" placeholder="Email..." class="r-form-email form-control" id="r-form-email">
 	                        </div>
-                                
+
                             <div class="form-group">
                                 <label class="text-color" id="option1">Student</label>
                                 <label class="switch">
@@ -201,7 +201,7 @@
                                 </label>
                                 <label class="text-color" id="option2">University</label>
                             </div>
-                                
+
 				            <button type="submit" class="btn" name="register">Sign me up!</button>
 						</form>
                     </div>
@@ -228,7 +228,7 @@
 							</div>
 						</div>
                     </div>
-                </div>    
+                </div>
         	</div>
         </div>
 
@@ -240,7 +240,7 @@
         				<div class="footer-border"></div>
         				<p>Made by <a href="#" target="_blank">Dreams Pursuit</a>.</p>
         			</div>
-        			
+
         		</div>
         	</div>
         </footer>
@@ -250,7 +250,7 @@
         <script src="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
         <script src="vendor/js/jquery.backstretch.min.js"></script>
         <script src="js/login.js"></script>
-        
+
         <!--[if lt IE 10]>
             <script src="vendor/js/placeholder.js"></script>
         <![endif]-->

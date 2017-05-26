@@ -1,4 +1,4 @@
-<?php
+ <?php
     include('session.php');
     require_once('sidebar.php');
     require_once('topnavbar.php');
@@ -26,7 +26,7 @@
 
           $id = $row['UNI_ID'];
 
-          $query = "INSERT INTO sql11160894.COURSE (CO_ID, CO_UNI, CO_DEP, CO_RESP, CO_NAME, CO_DUR, CO_TYPE, CO_DESC) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $depart) ."', '". mysqli_real_escape_string($conn, $coord) ."', '". mysqli_real_escape_string($conn, $name) ."', '". mysqli_real_escape_string($conn, $dur) ."', '". mysqli_real_escape_string($conn, $degree) ."', '". mysqli_real_escape_string($conn, $cdescrpt) ."')";
+          $query = "INSERT INTO COURSE (CO_ID, CO_UNI, CO_DEP, CO_RESP, CO_NAME, CO_DUR, CO_TYPE, CO_DESC) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $depart) ."', '". mysqli_real_escape_string($conn, $coord) ."', '". mysqli_real_escape_string($conn, $name) ."', '". mysqli_real_escape_string($conn, $dur) ."', '". mysqli_real_escape_string($conn, $degree) ."', '". mysqli_real_escape_string($conn, $cdescrpt) ."')";
 
           if ($conn->query($query) === TRUE) {
             if(file_exists("courses.json")){
@@ -81,7 +81,7 @@
 
           $id = $row['CO_ID'];
 
-          $query = "INSERT INTO sql11160894.UC (UC_ID, UC_CO, UC_TEAC, UC_NAME, UC_ECTS, UC_SEM, UC_Y) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $teacher) ."','". mysqli_real_escape_string($conn, $name) ."','". mysqli_real_escape_string($conn, $ects) ."','". mysqli_real_escape_string($conn, $sem) ."','". mysqli_real_escape_string($conn, $year) ."')";
+          $query = "INSERT INTO UC (UC_ID, UC_CO, UC_TEAC, UC_NAME, UC_ECTS, UC_SEM, UC_Y) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $teacher) ."','". mysqli_real_escape_string($conn, $name) ."','". mysqli_real_escape_string($conn, $ects) ."','". mysqli_real_escape_string($conn, $sem) ."','". mysqli_real_escape_string($conn, $year) ."')";
 
           if ($conn->query($query) === TRUE) {
             header("location: courses.php");

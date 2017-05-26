@@ -10,6 +10,7 @@
 
                 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
                 <meta name="viewport" content="width=device-width" />
+                <meta name="theme-color" content="#3b70db" />
 
                 <!-- Bootstrap core CSS-->
                 <link href="bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -26,6 +27,9 @@
                 <link href="vendor/css/weather-icons-wind.css" rel="stylesheet" />
                 <link href="vendor/css/weather-icons.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+
+                <link rel="stylesheet" href="vendor/js/fullcalendar/fullcalendar.min.css">
+                <link rel="stylesheet" href="vendor/js/fullcalendar/fullcalendar.print.css" media="print">
 
                 <script src="js/sidebar.js" type="text/javascript"></script>
 

@@ -10,7 +10,7 @@
 
   //$id = $row['U_ID'];
 
-  $query = "INSERT INTO sql11160894.MESSA (MES_ID ,MES_USER ,MES_TXT ,MES_TIME)VALUES (NULL , '1', '".$m."',CURRENT_TIMESTAMP);";
+  $query = "INSERT INTO MESSA (MES_ID ,MES_USER ,MES_TXT ,MES_TIME)VALUES (NULL , '1', '".$m."',CURRENT_TIMESTAMP);";
 
   if ($conn->query($query) === TRUE) {
       echo $m;

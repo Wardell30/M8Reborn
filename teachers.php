@@ -64,7 +64,7 @@
 
                 $id = $row['UNI_ID'];
 
-                $query = "INSERT INTO sql11160894.TEACHER (T_ID, T_UNI, T_NAME, T_PAR, T_BAC, T_MAS, T_PHD, T_WPL, T_PHLOC) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $name) ."', '". mysqli_real_escape_string($conn, $partial) ."', '". mysqli_real_escape_string($conn, $bac) ."', '". mysqli_real_escape_string($conn, $mas) ."', '". mysqli_real_escape_string($conn, $phd) ."', '". mysqli_real_escape_string($conn, $wlocations) ."', '". mysqli_real_escape_string($conn, $file) ."');";
+                $query = "INSERT INTO TEACHER (T_ID, T_UNI, T_NAME, T_PAR, T_BAC, T_MAS, T_PHD, T_WPL, T_PHLOC) VALUES (NULL, '". mysqli_real_escape_string($conn, $id) ."', '". mysqli_real_escape_string($conn, $name) ."', '". mysqli_real_escape_string($conn, $partial) ."', '". mysqli_real_escape_string($conn, $bac) ."', '". mysqli_real_escape_string($conn, $mas) ."', '". mysqli_real_escape_string($conn, $phd) ."', '". mysqli_real_escape_string($conn, $wlocations) ."', '". mysqli_real_escape_string($conn, $file) ."');";
 
                 if ($conn->query($query) === TRUE) {
 

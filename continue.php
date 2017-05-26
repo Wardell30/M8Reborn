@@ -80,7 +80,7 @@
 
                 $uniMail = $studentN . "@" . $suffix;
 
-                $query = "INSERT INTO sql11160894.USER (U_ID, U_UNAME, U_FN, U_LN, U_ADD, U_COUN, U_CT, U_ZIP, U_M, U_SM, U_UNI_ID, U_CO_ID, U_SN, U_AB, U_ACT) VALUES ('', '". mysqli_real_escape_string($conn, $_COOKIE["user"]) ."', '". mysqli_real_escape_string($conn, $fname) ."', '". mysqli_real_escape_string($conn, $lname) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $mail) ."', '". mysqli_real_escape_string($conn, $uniMail) ."', '". mysqli_real_escape_string($conn, $uniID) ."', '". mysqli_real_escape_string($conn, $courseID) ."', '". mysqli_real_escape_string($conn, $studentN) ."', '". mysqli_real_escape_string($conn, $about) ."', '0')";
+                $query = "INSERT INTO USER (U_ID, U_UNAME, U_FN, U_LN, U_ADD, U_COUN, U_CT, U_ZIP, U_M, U_SM, U_UNI_ID, U_CO_ID, U_SN, U_AB, U_ACT) VALUES (NULL, '". mysqli_real_escape_string($conn, $_COOKIE["user"]) ."', '". mysqli_real_escape_string($conn, $fname) ."', '". mysqli_real_escape_string($conn, $lname) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $mail) ."', '". mysqli_real_escape_string($conn, $uniMail) ."', '". mysqli_real_escape_string($conn, $uniID) ."', '". mysqli_real_escape_string($conn, $courseID) ."', '". mysqli_real_escape_string($conn, $studentN) ."', '". mysqli_real_escape_string($conn, $about) ."', '0')";
 
             } else {
                 $since = $_REQUEST['r-form-since'];
@@ -88,7 +88,7 @@
                 $vhm = $_REQUEST['r-form-vhm'];
                 $ms = $_REQUEST['r-form-ms'];
 
-                $query = "INSERT INTO sql11160894.UNI (UNI_ID, UNI_NAME, UNI_M, UNI_COUN, UNI_CT, UNI_ADD, UNI_ZIP, UNI_SIN, UNI_HM, UNI_VHM, UNI_MS) VALUES (NULL, '". mysqli_real_escape_string($conn, $student) ."', '". mysqli_real_escape_string($conn, $mail) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $since) ."', '". mysqli_real_escape_string($conn, $hm) ."', '". mysqli_real_escape_string($conn, $vhm) ."', '". mysqli_real_escape_string($conn, $ms) ."')";
+                $query = "INSERT INTO UNI (UNI_ID, UNI_NAME, UNI_M, UNI_COUN, UNI_CT, UNI_ADD, UNI_ZIP, UNI_SIN, UNI_HM, UNI_VHM, UNI_MS) VALUES (NULL, '". mysqli_real_escape_string($conn, $student) ."', '". mysqli_real_escape_string($conn, $mail) ."', '". mysqli_real_escape_string($conn, $country) ."', '". mysqli_real_escape_string($conn, $state) ."', '". mysqli_real_escape_string($conn, $address) ."', '". mysqli_real_escape_string($conn, $zip) ."', '". mysqli_real_escape_string($conn, $since) ."', '". mysqli_real_escape_string($conn, $hm) ."', '". mysqli_real_escape_string($conn, $vhm) ."', '". mysqli_real_escape_string($conn, $ms) ."')";
             }
 
 

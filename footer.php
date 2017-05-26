@@ -20,6 +20,28 @@
             </div>
         </div>
 
+        <div class="modal fade" id="showTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabelTask"></h4>
+                    </div>
+                    <div class="modal-body">
+                      <h4 id="description">Description: </h4>
+                      <br>
+                      <h4 id="start">Event Start:</h4>
+                      <br>
+                      <h4 id="end">Event End:</h4>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal" id="deleteTask">Delete</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="addTeachers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -213,6 +235,34 @@
             </div>
         </div>
 
+        <div class="modal fade" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Add a Note</h4>
+                    </div>
+                    <div class="modal-body">
+                      <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="noteDescription" class="form-control-label">Description</label>
+                            <input type="text" class="form-control" id="noteDescription" name="noteDescription">
+                        </div>
+                        <div class="form-group">
+                          <input type="file" name="image" />
+                        </div>
+                        <div class="form-group">
+                          <input type="submit" class="btn btn-default" id="submitNote"/>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         </div>
       </div>
     </body>
@@ -226,5 +276,6 @@
     <script src="vendor/js/bootstrap-select.js" type="text/javascript"></script>
     <script src="vendor/js/bootstrap-checkbox-radio-switch.js" type="text/javascript"></script>
     <script src="vendor/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
-    <script src="vendor/js/chartist.min.js" type="text/javascript"></script>
+    <script src="vendor/js/Chart.min.js" type="text/javascript"></script>
     <script src="js/timeweather.js" type="text/javascript"></script>
+    <script src="js/topnavbar.js" type="text/javascript"></script>

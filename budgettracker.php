@@ -1,6 +1,6 @@
-<?php 
-    include('session.php');
-    require_once('sidebar.php'); 
+<?php
+   include('session.php');
+    require_once('sidebar.php');
     require_once('topnavbar.php');
 ?>
                 <div class="content">
@@ -10,9 +10,9 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <?php require_once('footer.php'); ?>
-                
+
             </div>
         </div>
     </body>

@@ -19,7 +19,7 @@
         }
     }
 
-    $query = "INSERT INTO sql11160894.LOGIN (L_ID, L_UNAME, L_PASS, L_UNI) VALUES ('', '". mysqli_real_escape_string($conn, $user) ."', '". mysqli_real_escape_string($conn, $pass) ."', '". mysqli_real_escape_string($conn, $student) ."');";
+    $query = "INSERT INTO LOGIN (L_ID, L_UNAME, L_PASS, L_UNI) VALUES (NULL, '". mysqli_real_escape_string($conn, $user) ."', '". mysqli_real_escape_string($conn, $pass) ."', '". mysqli_real_escape_string($conn, $student) ."');";
 
     if ($conn->query($query) === TRUE) {
 

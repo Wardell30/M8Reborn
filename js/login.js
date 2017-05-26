@@ -1,12 +1,17 @@
 
 jQuery(document).ready(function() {
-	
+
     /*
         Fullscreen background
     */
-    
+
     $.backstretch("images/backgrounds/1.jpg");
-    
+
+		var options = {
+      body: "theBody",
+      icon: "images/backgrounds/1.jpg"
+	  }
+
     /*
         Forms show / hide
     */
@@ -20,8 +25,8 @@ jQuery(document).ready(function() {
             $('head title', window.parent.document).text('M8Reborn | Register');
     	}
     });
-    
-    
+
+
     $('.show-login-form').on('click', function(){
     	if( ! $(this).hasClass('active') ) {
     		$('.show-register-form').removeClass('active');
@@ -32,16 +37,16 @@ jQuery(document).ready(function() {
             $('head title', window.parent.document).text('M8Reborn | Login');
     	}
     });
-    
+
     /*
         Login form validation
     */
     $('.l-form input[type="text"], .l-form input[type="password"], .l-form textarea').on('focus', function() {
     	$(this).removeClass('input-error');
     });
-    
+
     $('.l-form').on('submit', function(e) {
-    	
+
     	$(this).find('input[type="text"], input[type="password"], textarea').each(function(){
     		if( $(this).val() == "" ) {
     			e.preventDefault();
@@ -51,18 +56,18 @@ jQuery(document).ready(function() {
     			$(this).removeClass('input-error');
     		}
     	});
-    	
+
     });
-    
+
     /*
         Registration form validation
     */
     $('.r-form input[type="text"], .r-form textarea').on('focus', function() {
     	$(this).removeClass('input-error');
     });
-    
+
     $('.r-form').on('submit', function(e) {
-    	
+
     	$(this).find('input[type="text"], textarea').each(function(){
     		if( $(this).val() == "" ) {
     			e.preventDefault();
@@ -72,8 +77,8 @@ jQuery(document).ready(function() {
     			$(this).removeClass('input-error');
     		}
     	});
-    	
+
     });
-    
-    
+
+
 });

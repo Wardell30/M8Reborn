@@ -1,0 +1,57 @@
+What is Multimedia?
+Pelos menos 1 media estatico, 1 media dinamico e processado sob forma digital
+
+Imagem(vetorial vs BitMap)- Identificar e Explicar as diferenças entre uma e outra
+
+Analógico vs Digital
+
+Digitalização de Imagens, videos e Audio. 
+
+PCM-Amostragem
+Quantificar
+Codificar
+
+Sinais Analógicos
+
+Cor
+RGB- O que é? Computadores
+CMYK - Imprimir Revistas
+YUV e YCRCB - Televisão e Video
+
+Primary Colors, Secondary Colors, Aditivas e Subtrativas
+
+Formatos de Imagem
+BMP
+GIF vs PNG
+JPG
+
+Compressões
+-Lossy
+-Lossless
+
+Formato de imagem é lossy ou lossless?
+
+Videos
+-Codec(COmpressão e descompressão, Codificação e Descodificação)
+-Formatos de Video- MPEGx(x pode ir 1 ate 4) Verificar as diferenças - Usado em DVD
+-H.26x(x pode ir de 1 a 4) - Usado em BR
+-Compressão na Frame ou na Interframe
+
+
+Compressão
+-Temporal e Espacial
+
+Animação(12 Regras)
+Principio de Animação
+
+Realidade Aumentada e Realidade Virtual
+
+Multimedia Interativa
+
+2D vs 3D
+
+Polygon/Mesh
+
+
+
+
